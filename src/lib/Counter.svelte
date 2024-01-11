@@ -7,13 +7,13 @@
 
 	const dispatch = createEventDispatcher();
 
-	const increment = () => (count = count + 1);
-	const decrement = () => (count = count - 1);
-	const reset = () => (count = 0);
-	const deleteCounter = () => {
+	const increment = (): number => (count = count + 1);
+	const decrement = (): number => (count = count - 1);
+	const reset = (): number => (count = 0);
+	const deleteCounter = (): void => {
 		dispatch('delete', { id });
 	};
-	const controlClass = 'min-w-max px-3 py-1 text-lg';
+	const controlClass: string = 'min-w-max px-3 py-1 text-lg';
 </script>
 
 <div

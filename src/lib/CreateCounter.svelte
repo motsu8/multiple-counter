@@ -9,7 +9,7 @@
 
 	let counters: Counter[] = [{ id: 1, count: 0, title: 'title' }];
 
-	const createCounter = () => {
+	const createCounter = (): void => {
 		counters = counters.concat({
 			id: counters.length + 1,
 			count: 0,
@@ -17,7 +17,7 @@
 		});
 	};
 
-	const deleteCounter = (e: any): void => {
+	const deleteCounter = (e: CustomEvent<{ id: number }>): void => {
 		counters = counters.filter(({ id }) => id !== e.detail.id);
 	};
 </script>
