@@ -45,7 +45,9 @@
 		/>
 	{/each}
 
-	<button on:click={createCounter}> Add Counter </button>
+	<button on:click={createCounter} class="bg-green-400 m-auto w-full max-w-sm rounded text-white">
+		Add Counter
+	</button>
 
 	<p>title list: {allTitle}</p>
 
