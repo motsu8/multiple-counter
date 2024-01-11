@@ -2,7 +2,7 @@
 	import CreateCounter from '../lib/CreateCounter.svelte';
 </script>
 
-<h1>Multiple Counter</h1>
+<h1 class="text-6xl py-3">Multiple Counter</h1>
 <CreateCounter />
 
 <style>
