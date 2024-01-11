@@ -5,6 +5,7 @@
 	export let title: string = '';
 	export let id: number;
 
+	const controlClass: string = 'min-w-max px-3 py-1 text-lg';
 	const dispatch = createEventDispatcher();
 
 	const increment = (): number => (count = count + 1);
@@ -13,7 +14,6 @@
 	const deleteCounter = (): void => {
 		dispatch('delete', { id });
 	};
-	const controlClass: string = 'min-w-max px-3 py-1 text-lg';
 </script>
 
 <div
@@ -29,8 +29,8 @@
 		{count}
 	</p>
 	<div class="flex text-white">
-		<button on:click={increment} class={`bg-red-400 rounded-l min-w-max ${controlClass}`}>+</button>
-		<button on:click={decrement} class={`bg-blue-400 min-w-max ${controlClass}`}>-</button>
+		<button on:click={increment} class={`bg-red-400 rounded-l ${controlClass}`}>+</button>
+		<button on:click={decrement} class={`bg-blue-400 ${controlClass}`}>-</button>
 		<button on:click={reset} class={`bg-yellow-400 rounded-r font-bold ${controlClass}`}>0</button>
 		<button on:click={deleteCounter} class={`text-gray-400 ${controlClass}`}>x</button>
 	</div>

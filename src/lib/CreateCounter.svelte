@@ -22,9 +22,17 @@
 		counters = counters.filter(({ id }) => id !== e.detail.id);
 	};
 
+	/**
+	 * reactive
+	 */
 	$: reduceCount = counters.reduce((total, current) => {
 		return total + current.count;
 	}, 0);
+
+	$: allTitle = counters.reduce((string, current, index) => {
+		if (index === counters.length - 1) return `${string}${current.title}`;
+		else return `${string}${current.title}, `;
+	}, '');
 </script>
 
 <div class="space-y-2 py-2">
@@ -37,11 +45,11 @@
 		/>
 	{/each}
 
-	<button on:click={createCounter}> Add Counter </button>
+	<button on:click={createCounter} class="bg-green-400 m-auto w-full max-w-sm rounded text-white">
+		Add Counter
+	</button>
 
-	{#each counters as counter}
-		<p>{counter.title}</p>
-	{/each}
+	<p>title list: {allTitle}</p>
 
 	<p>sum of count: {reduceCount}</p>
 </div>
