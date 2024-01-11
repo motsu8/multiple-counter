@@ -22,7 +22,7 @@
 	};
 </script>
 
-<div class="space-y-2 w-1/4 py-2">
+<div class="space-y-2 py-2">
 	{#each counters as counter}
 		<Counter
 			{...counter}
