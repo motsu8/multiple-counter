@@ -17,9 +17,11 @@
 	};
 </script>
 
-{#each counters as counter}
-	<Counter {...counter} bind:title={counter.title} />
-{/each}
+<div class="space-y-2">
+	{#each counters as counter}
+		<Counter {...counter} bind:title={counter.title} />
+	{/each}
+</div>
 
 <button on:click={handleClick}> Add Counter </button>
 
