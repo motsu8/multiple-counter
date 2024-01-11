@@ -19,7 +19,7 @@
 
 <div class="space-y-2">
 	{#each counters as counter}
-		<Counter {...counter} bind:title={counter.title} />
+		<Counter {...counter} bind:title={counter.title} bind:count={counter.count} />
 	{/each}
 </div>
 
