@@ -6,6 +6,7 @@
 		count: number;
 		title: string;
 	};
+	type DeleteEvent = CustomEvent<{ id: number }>;
 
 	let counters: Counter[] = [{ id: 1, count: 0, title: 'title' }];
 
@@ -17,9 +18,13 @@
 		});
 	};
 
-	const deleteCounter = (e: CustomEvent<{ id: number }>): void => {
+	const deleteCounter = (e: DeleteEvent): void => {
 		counters = counters.filter(({ id }) => id !== e.detail.id);
 	};
+
+	$: reduceCount = counters.reduce((total, current) => {
+		return total + current.count;
+	}, 0);
 </script>
 
 <div class="space-y-2 py-2">
@@ -37,4 +42,6 @@
 	{#each counters as counter}
 		<p>{counter.title}</p>
 	{/each}
+
+	<p>sum of count: {reduceCount}</p>
 </div>
