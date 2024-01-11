@@ -9,7 +9,11 @@
 
 	let counters: Counter[] = [{ id: 1, count: 0, title: 'title' }];
 	const handleClick = () => {
-		counters = counters.concat({ id: counters.length + 1, count: 0, title: 'title' });
+		counters = counters.concat({
+			id: counters.length + 1,
+			count: 0,
+			title: 'title'
+		});
 	};
 </script>
 
@@ -20,5 +24,5 @@
 <button on:click={handleClick}> Add Counter </button>
 
 {#each counters as counter}
-  <p>{counter.title}</p>
+	<p>{counter.title}</p>
 {/each}
