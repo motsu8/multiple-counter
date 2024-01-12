@@ -1,14 +1,8 @@
 <script lang="ts">
 	import Counter from '../lib/Counter.svelte';
+	import type { CounterType, DeleteEvent } from '../types/counter';
 
-	type Counter = {
-		id: number;
-		count: number;
-		title: string;
-	};
-	type DeleteEvent = CustomEvent<{ id: number }>;
-
-	let counters: Counter[] = [{ id: 1, count: 0, title: 'title' }];
+	let counters: CounterType[] = [{ id: 1, count: 0, title: 'title' }];
 
 	const createCounter = (): void => {
 		counters = counters.concat({
