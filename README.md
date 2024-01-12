@@ -14,7 +14,7 @@ url: https://develop.d33n71zjml4ozu.amplifyapp.com/
 # 困難だった課題
 Webアプリ作成後のAWS Amplifyへのデプロイで手間取った。
 具体的には下記のエラーで時間を要した。
-- svelteKitが自動的にインストールするアダプターがAmplifyは対応していなかった。
-- Amplifyのnode.jsのバージョンがデフォルトだと、古いバージョンで使用しているバージョンに変えなければいけなかった。
-- ビルド後のディレクトリ名の変更が必要だった。
-- ビルド後のhtml名をindex.htmlにする必要があった。
+- svelteKitが自動的にインストールするアダプターがAmplifyは対応していなかった。 [#20](https://github.com/motsu8/multiple-counter/issues/20)
+- Amplifyのnode.jsのバージョンがデフォルトだと、古いバージョンで使用しているバージョンに変えなければいけなかった。[#21](https://github.com/motsu8/multiple-counter/issues/21)
+- ビルド後のhtml名をindex.htmlにする必要があった。[#22](https://github.com/motsu8/multiple-counter/issues/22)
+- バンドルしたファイルのアウトプットディレクトリ名の変更が必要だった。→ Amplify.ymlで変更
