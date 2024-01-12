@@ -1,38 +1,20 @@
-# create-svelte
+# Multiple Counter
+複数のカウンターを作成し、合計値を算出することができるWebアプリです。
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+url: https://develop.d33n71zjml4ozu.amplifyapp.com/
 
-## Creating a project
+![](./static/demo.gif)
 
-If you're seeing this, you've probably already done this step. Congrats!
+# 要件
+- カウントの増減やリセット機能
+- カウンターの追加及び削除機能
+- 各カウンターのタイトル設定機能
+- 複数のカウンターの合計値表示機能
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# 困難だった課題
+Webアプリ作成後のAWS Amplifyへのデプロイで手間取った。
+具体的には下記のエラーで時間を要した。
+- svelteKitが自動的にインストールするアダプターがAmplifyは対応していなかった。
+- Amplifyのnode.jsのバージョンがデフォルトだと、古いバージョンで使用しているバージョンに変えなければいけなかった。
+- ビルド後のディレクトリ名の変更が必要だった。
+- ビルド後のhtml名をindex.htmlにする必要があった。

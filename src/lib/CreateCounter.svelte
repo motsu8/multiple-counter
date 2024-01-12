@@ -2,8 +2,14 @@
 	import Counter from '../lib/Counter.svelte';
 	import type { CounterType, DeleteEvent } from '../types/counter';
 
+	/**
+	 * 初期値
+	 */
 	let counters: CounterType[] = [{ id: 1, count: 0, title: 'title' }];
 
+	/**
+	 * カウンター作成メソッド
+	 */
 	const createCounter = (): void => {
 		counters = counters.concat({
 			id: counters.length + 1,
@@ -12,6 +18,10 @@
 		});
 	};
 
+	/**
+	 * カウンター削除メソッド
+	 * @param e: DeleteEvent
+	 */
 	const deleteCounter = (e: DeleteEvent): void => {
 		counters = counters.filter(({ id }) => id !== e.detail.id);
 	};

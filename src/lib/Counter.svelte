@@ -2,16 +2,25 @@
 	import { createEventDispatcher } from 'svelte';
 	import { send, receive } from './transition';
 
+	/**
+	 * パラメーター
+	 */
 	export let count: number = 0;
 	export let title: string = '';
 	export let id: number;
 
+	/**
+	 * カウンターコントロール
+	 */
 	const controlClass: string = 'min-w-max px-3 py-1 text-lg';
-	const dispatch = createEventDispatcher();
-
 	const increment = (): number => (count += 1);
 	const decrement = (): number => (count - 1 < 0 ? count : (count -= 1));
 	const reset = (): number => (count = 0);
+
+	/**
+	 * 削除メソッドの基点となるidを渡すメソッド
+	 */
+	const dispatch = createEventDispatcher();
 	const deleteCounter = (): void => {
 		dispatch('delete', { id });
 	};
